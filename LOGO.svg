@@ -1,0 +1,59 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Numerical Methods Logo</title>
+  <desc id="desc">Curve with a bracket interval a-b and midpoint, representing root finding.</desc>
+
+  <!-- Palette via CSS variables (ปรับสีได้ง่าย) -->
+  <style>
+    :root{
+      --bg:#0f172a;      /* พื้นหลัง */
+      --grid:#1f2a44;    /* เส้นกริด */
+      --accent:#60a5fa;  /* เส้นกราฟ/จุด */
+      --accent2:#22d3ee; /* เส้น interval */
+      --tick:#e2e8f0;    /* แกน/ตัวหนังสือ */
+    }
+    .soft{opacity:.45}
+    .stroke-round{stroke-linecap:round; stroke-linejoin:round}
+  </style>
+
+  <!-- BG -->
+  <rect x="0" y="0" width="160" height="160" fill="var(--bg)"></rect>
+
+  <!-- Grid -->
+  <g class="soft" stroke="var(--grid)">
+    <path d="M20 40H140 M20 80H140 M20 120H140 M40 20V140 M80 20V140 M120 20V140"></path>
+  </g>
+
+  <!-- Axes -->
+  <g class="stroke-round" stroke="var(--tick)" stroke-width="2">
+    <path d="M20 140H140"></path>
+    <path d="M20 140V20"></path>
+  </g>
+
+  <!-- Function curve -->
+  <path d="M20,120 C45,40 95,200 140,35" fill="none" stroke="var(--accent)" stroke-width="3" class="stroke-round"></path>
+
+  <!-- Interval [a,b] on x-axis -->
+  <g class="stroke-round" stroke="var(--accent2)" stroke-width="3">
+    <path d="M45 140H115"></path>
+    <!-- ticks at a, m, b -->
+    <path d="M45 136V144"></path>
+    <path d="M80 134V146"></path>
+    <path d="M115 136V144"></path>
+  </g>
+
+  <!-- Points a, m, b projected on curve -->
+  <g fill="var(--accent)">
+    <!-- approximate y from curve visually -->
+    <circle cx="45" cy="102" r="4"></circle>
+    <circle cx="80" cy="92" r="5"></circle>
+    <circle cx="115" cy="60" r="4"></circle>
+  </g>
+
+  <!-- labels -->
+  <g fill="var(--tick)" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="9">
+    <text x="42" y="154">a</text>
+    <text x="78" y="154">m</text>
+    <text x="112" y="154">b</text>
+    <text x="125" y="18">f(x)</text>
+  </g>
+</svg>
